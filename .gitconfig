@@ -1,0 +1,37 @@
+# This is Git's per-user configuration file.
+
+[user]
+	name = Antonia Siegert
+	email = oniboni@mailbox.org
+	signingkey = DE8272DA128DB003
+
+[core]
+	editor = vim
+
+[alias]
+	cg = !git config --global --edit
+	cl = !git config --local --edit
+	s = !git status
+	l = !git log
+	g = !git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''			 %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	shame = blame -w -M
+	pl = pull --rebase
+	co = checkout
+
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[difftool "meld"]
+	cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+
+[credential]
+	helper = store
+
+[gpg]
+	program = gpg2
+[commit]
+	gpgsign = true
+
+[branch]
+	autosetuprebase = always
